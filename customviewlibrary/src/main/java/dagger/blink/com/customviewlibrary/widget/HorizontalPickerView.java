@@ -186,10 +186,10 @@ public class HorizontalPickerView extends View {
                 break;
 
             case MotionEvent.ACTION_UP:
-                int scrollYVelocity = 2 * getScrollXVelocity() / 3;
-                if (Math.abs(scrollYVelocity) > minimumVelocity) {
+                int scrollXVelocity = getScrollXVelocity() / 5;
+                if (Math.abs(scrollXVelocity) > minimumVelocity) {
                     oldOffsetX = offsetX;
-                    scroller.fling(0, 0, scrollYVelocity, 0, 0, 0, -Integer.MAX_VALUE, Integer.MAX_VALUE);
+                    scroller.fling(0, 0, scrollXVelocity, 0, -Integer.MAX_VALUE, Integer.MAX_VALUE, 0, 0);
                     invalidate();
                 } else {
                     finishScroll();
@@ -207,6 +207,12 @@ public class HorizontalPickerView extends View {
                 break;
         }
         return true;
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        getParent().requestDisallowInterceptTouchEvent(true);
+        return super.dispatchTouchEvent(event);
     }
 
     @Override
