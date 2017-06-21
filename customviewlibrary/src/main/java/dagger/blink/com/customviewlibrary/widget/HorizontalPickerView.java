@@ -186,7 +186,7 @@ public class HorizontalPickerView extends View {
                 break;
 
             case MotionEvent.ACTION_UP:
-                int scrollYVelocity = 2 * getScrollYVelocity() / 3;
+                int scrollYVelocity = 2 * getScrollXVelocity() / 3;
                 if (Math.abs(scrollYVelocity) > minimumVelocity) {
                     oldOffsetX = offsetX;
                     scroller.fling(0, 0, scrollYVelocity, 0, 0, 0, -Integer.MAX_VALUE, Integer.MAX_VALUE);
@@ -229,9 +229,9 @@ public class HorizontalPickerView extends View {
         velocityTracker.addMovement(event);
     }
 
-    private int getScrollYVelocity() {
+    private int getScrollXVelocity() {
         velocityTracker.computeCurrentVelocity(1000, maximumVelocity);
-        int velocity = (int) velocityTracker.getYVelocity();
+        int velocity = (int) velocityTracker.getXVelocity();
         return velocity;
     }
 

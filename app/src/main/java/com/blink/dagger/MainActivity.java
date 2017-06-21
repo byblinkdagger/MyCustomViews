@@ -34,5 +34,16 @@ public class MainActivity extends AppCompatActivity {
         data.add("3000");
         data.add("5000");
         pickerView.setDataList(data);
+        pickerView.setOnScrollChangedListener(new HorizontalPickerView.OnScrollChangedListener() {
+            @Override
+            public void onScrollChanged(int curIndex) {
+
+            }
+
+            @Override
+            public void onScrollFinished(int curIndex) {
+
+            }
+        });
     }
 }
