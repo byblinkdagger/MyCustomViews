@@ -9,6 +9,17 @@ HorizontalPickerView is a picker view according to [huzenan/EasyPickerView](http
 ```
 HorizontalPickerView pickerView = (HorizontalPickerView) findViewById(R.id.picker_view);
 pickerView.setDataList(data);
+pickerView.setOnScrollChangedListener(new HorizontalPickerView.OnScrollChangedListener() {
+    @Override
+    public void onScrollChanged(int curIndex) {
+
+    }
+
+    @Override
+    public void onScrollFinished(int curIndex) {
+
+    }
+});
 ```
 
 * custom Attr
@@ -23,4 +34,5 @@ pickerView.setDataList(data);
 ```
 
 * demo
+
 ![ezgif-1-5065d40614.gif](http://upload-images.jianshu.io/upload_images/2555073-a2289dff24f3344d.gif?imageMogr2/auto-orient/strip)
