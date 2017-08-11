@@ -1,6 +1,19 @@
 # MyCustomViews
 
-* 2017/06/21 update HorizontalPickerView
+###### 2017/08/11 update ScanningView
+
+* usage
+```
+            scanningView.startAnim();
+            scanningView.stopAnim();
+```
+
+* result
+
+<img src="/screen/scan.gif" alt="screenshot" title="screenshot" width="270" height="486" />
+
+
+###### 2017/06/21 update HorizontalPickerView
 
 HorizontalPickerView is a picker view according to [huzenan/EasyPickerView](https://github.com/huzenan/EasyPickerView) which can horizontally scroll and pick the item content.
 
@@ -22,17 +35,6 @@ pickerView.setOnScrollChangedListener(new HorizontalPickerView.OnScrollChangedLi
 });
 ```
 
-* custom Attr
-```
-    <declare-styleable name="HorizontalPickerView">
-        <attr name="textCount" format="integer"/>
-        <attr name="textMaxScale" format="float"/>
-        <attr name="textPadding" format="dimension"/>
-        <attr name="textColor" format="color"/>
-        <attr name="textSize" format="dimension"/>
-    </declare-styleable>
-```
+* result
 
-* demo
-
-![ezgif-1-5065d40614.gif](http://upload-images.jianshu.io/upload_images/2555073-a2289dff24f3344d.gif?imageMogr2/auto-orient/strip)
+<img src="/screen/horizontal.gif" alt="screenshot" title="screenshot" width="270" height="486" />

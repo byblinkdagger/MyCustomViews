@@ -21,7 +21,8 @@ import dagger.blink.com.customviewlibrary.R;
 import dagger.blink.com.customviewlibrary.util.DensityUtil;
 
 /**
- * Created by lucky on 2017/6/21.
+ * from https://github.com/huzenan/EasyPickerView
+ * modify by lucky on 2017/6/21 for horizontal requset.
  */
 public class HorizontalPickerView extends View {
 

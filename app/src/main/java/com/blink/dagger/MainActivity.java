@@ -1,12 +1,13 @@
 package com.blink.dagger;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import dagger.blink.com.customviewlibrary.widget.HorizontalPickerView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,36 +15,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        HorizontalPickerView pickerView = (HorizontalPickerView) findViewById(R.id.picker_view);
-        List<String> data = new ArrayList<>();
-        data.add("1");
-        data.add("5");
-        data.add("8");
-        data.add("10");
-        data.add("18");
-        data.add("88");
-        data.add("90");
-        data.add("100");
-        data.add("111");
-        data.add("123");
-        data.add("256");
-        data.add("388");
-        data.add("1000");
-        data.add("1818");
-        data.add("2000");
-        data.add("3000");
-        data.add("5000");
-        pickerView.setDataList(data);
-        pickerView.setOnScrollChangedListener(new HorizontalPickerView.OnScrollChangedListener() {
-            @Override
-            public void onScrollChanged(int curIndex) {
+        ButterKnife.bind(this);
+    }
 
-            }
-
-            @Override
-            public void onScrollFinished(int curIndex) {
-
-            }
-        });
+    @OnClick({R.id.bt_horizontal, R.id.bt_scan})
+    public void onClick(View view) {
+        Intent intent = new Intent();
+        switch (view.getId()) {
+            case R.id.bt_horizontal:
+                Log.d("luck","1111111111");
+                intent.setClass(this,HorizontalPickerActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.bt_scan:
+                Log.d("luck","2222222222222");
+                intent.setClass(this,ScanActivity.class);
+                startActivity(intent);
+                break;
+        }
     }
 }
